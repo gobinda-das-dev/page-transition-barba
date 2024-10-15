@@ -126,7 +126,7 @@ barba.init({
          const tg = data.trigger; // backword or forword
          if (isAnimating) return;
          isAnimating = true;
-         const tl = gsap.timeline();
+         const tl = gsap.timeline().timeScale(0.5);
 
 
          if(tg == 'back' || tg == 'popstate') {
@@ -142,7 +142,7 @@ barba.init({
          const tg = data.trigger; // backword or forword
          const tl = gsap.timeline({
             onComplete: () => isAnimating = false
-         })
+         }).timeScale(0.5)
 
          if(tg == 'back' || tg == 'popstate') {
             unRevealExit(tl, con);
